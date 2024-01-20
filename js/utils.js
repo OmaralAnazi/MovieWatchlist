@@ -10,7 +10,7 @@ export function getMoviesFromLocalStorage() {
 
 export function saveMovieToLocalStorage(imdbId) {
     if (isUnsavedMovie(imdbId)) {
-        fetch('http://www.omdbapi.com/?apikey=' + myKey + '&i=' + imdbId)
+        fetch('https://www.omdbapi.com/?apikey=' + myKey + '&i=' + imdbId)
             .then(response => response.json())
             .then(movieObject => {
                 getUserWatchlist().push(movieObject);

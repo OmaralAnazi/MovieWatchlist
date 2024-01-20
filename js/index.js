@@ -20,7 +20,7 @@ document.addEventListener('click', e => {
 function fetchMovies() {
     const title = searchInput.value;
 
-    fetch('http://www.omdbapi.com/?apikey=' + myKey + '&s=' + title)
+    fetch('https://www.omdbapi.com/?apikey=' + myKey + '&s=' + title)
         .then(response => {
             if (!response.ok)
                 throw Exception('something went wrong');
@@ -43,7 +43,7 @@ function renderMovies() {
     moviesElement.innerHTML = '';
 
     currentViewedMovies.forEach((movie, index) => {
-        fetch('http://www.omdbapi.com/?apikey=' + myKey + '&i=' + movie.imdbID)
+        fetch('https://www.omdbapi.com/?apikey=' + myKey + '&i=' + movie.imdbID)
             .then(response => {
                 if (!response.ok)
                     throw Exception('something went wrong');

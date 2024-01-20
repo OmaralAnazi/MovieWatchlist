@@ -18,7 +18,7 @@ function renderWatchlist() {
         moviesElement.innerHTML = '';
 
         getUserWatchlist().forEach((movie, index) => {
-            fetch('http://www.omdbapi.com/?apikey=' + myKey + '&i=' + movie.imdbID)
+            fetch('https://www.omdbapi.com/?apikey=' + myKey + '&i=' + movie.imdbID)
                 .then(response => response.json())
                 .then(movieObject => {
                     moviesElement.innerHTML += getMovieHtml(movieObject, index, true);
